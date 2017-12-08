@@ -1,0 +1,13 @@
+sonata_admin:
+    title: Nearsoft
+    templates:
+        layout: admin/layout.html.twig
+        dashboard: 'AppBundle:admin:dashboard.html.twig'
+
+sonata_block:
+    default_contexts: [sonata_page_bundle]
+
+sonata_core: ~
+
+sonata_doctrine_orm_admin:
+

@@ -1,0 +1,74 @@
+{% extends sonata_block.templates.block_base %}
+
+
+{% block block %}
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-comments fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge">{{ data.actors }}</div>
+                        <div>Actors</div>
+                    </div>
+                </div>
+            </div>
+            <a href="{{ path('admin_app_actor_list') }}">
+                <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-tasks fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge">{{ data.genres }}</div>
+                        <div>Genres</div>
+                    </div>
+                </div>
+            </div>
+            <a href="{{ path('admin_app_genre_list') }}">
+                <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-file-movie-o fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge">{{ data.movies }}</div>
+                        <div>Movies</div>
+                    </div>
+                </div>
+            </div>
+            <a href="{{ path('admin_app_movie_list') }}">
+                <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

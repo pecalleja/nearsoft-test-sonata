@@ -1,0 +1,50 @@
+imports:
+    - { resource: config.yml }
+
+framework:
+    router:
+        resource: "%kernel.root_dir%/config/routing_dev.yml"
+        strict_requirements: true
+    profiler: { only_exceptions: false }
+
+web_profiler:
+    toolbar: true
+    intercept_redirects: false
+
+monolog:
+    handlers:
+        main:
+            type: stream
+            path: "%kernel.logs_dir%/%kernel.environment%.log"
+            level: debug
+            channels: [!event]
+            formatter: monolog.multiline_formatter
+        console:
+            type:   console
+            channels: [!event, !doctrine]
+        # uncomment to get logging in your browser
+        # you may have to allow bigger header sizes in your Web server configuration
+        #firephp:
+        #    type:   firephp
+        #    level:  info
+        #chromephp:
+        #    type:   chromephp
+        #    level:  info
+
+#swiftmailer:
+#    delivery_address: me@example.com
+# Assetic Configuration
+#assetic:
+#    #java: /usr/bin/java
+#    #node: "%nodejs_path%"
+#    node: "C:/Program Files/nodejs/node.exe"
+#    filters:
+#        uglifyjs2:
+#            # the path to the uglifyjs executable
+#            # bin: C:/Users/Standa/AppData/Roaming/npm/node_modules/uglify-js/bin/uglifyjs
+#            bin: "C:/Users/pecalleja/AppData/Roaming/npm/node_modules/uglify-js/bin/uglifyjs"
+#            #bin: "%uglifyjs_path%"
+#        uglifycss:
+#            # bin:  "C:/Users/Standa/AppData/Roaming/npm/node_modules/uglifycss/uglifycss"
+#            bin: "C:/Users/pecalleja/AppData/Roaming/npm/node_modules/uglifycss/uglifycss"
+#            #bin: "%uglifycss_path%"

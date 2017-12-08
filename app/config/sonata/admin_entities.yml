@@ -1,0 +1,24 @@
+services:
+    admin.genre:
+        class: AppBundle\Admin\GenreAdmin
+        arguments: [~, AppBundle\Entity\Genre, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'Genre', label: "Genre" }
+
+    admin.actor:
+        class: AppBundle\Admin\ActorAdmin
+        arguments: [~, AppBundle\Entity\Actor, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'Actor', label: "Actor" }
+
+    admin.movie:
+        class: AppBundle\Admin\MovieAdmin
+        arguments: [~, AppBundle\Entity\Movie, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'Movie', label: "Movie" }
+
+    sonata.block.service.numeros:
+            class: AppBundle\Block\NumerosDashboardBlockService
+            arguments: [ "sonata.block.service.numeros", '@templating', '@doctrine.orm.entity_manager', '@service_container' ]
+            tags:
+                - { name: sonata.block }
