@@ -97,7 +97,7 @@ class Movie
     /**
      * Set year
      *
-     * @param \DateTime $year
+     * @param int $year
      * @return Movie
      */
     public function setYear($year)
